@@ -1,10 +1,10 @@
 THIS_SCRIPT_PATH=`dirname $0`
 
-export BASE_DIR=`readlink -f $THIS_SCRIPT_PATH`
-export PROJECT_NAME=`basename $BASE_DIR`
+export BASE_DIR="/home/woojun/workspace/Multi-VidSum"
+export PROJECT_NAME="multi_vidsum"
 
 
-export WORK_DIR=""
+export WORK_DIR="/home/woojun/workspace/Multi-VidSum/work"
 
 # if WORK_DIR is not set, then throw error
 if [ -z "$WORK_DIR" ]; then

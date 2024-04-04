@@ -3,14 +3,14 @@ source ./tools/shell_utils.sh
 load_project_config
 
 cp "${DOCKER_SETTING_DIR}/base_entrypoint.sh" "${DOCKER_SETTING_DIR}/entrypoint.sh"
-exec_shell="zsh"
+exec_shell="bash"
 echo $exec_shell  >> "${DOCKER_SETTING_DIR}/entrypoint.sh"
 
 
 
-export DOCKER_HOST=unix://${XDG_RUNTIME_DIR}/docker.sock
+export DOCKER_HOST=unix:///var/run/docker.sock
 IP_ADDRESS=`hostname -I | cut -d ' ' -f1`
-ZSH_CONFIG_PATH=`readlink -f ${HOME}/.zshrc`
+ZSH_CONFIG_PATH=`readlink -f ${HOME}/.bashrc`
 
 mkdir -p "${WORK_DIR}"
 
